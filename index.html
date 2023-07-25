@@ -7,7 +7,7 @@
     <title>Snake Game</title>
     <style>
       body {
-        height: 100vh;
+        min-height: 100vh;
         width: 100vw;
         display: flex;
         justify-content: space-around;
@@ -15,8 +15,9 @@
         margin: 0;
         background-color: rgb(31, 30, 30);
         font-size: 18px;
-        font-family: "georgia";
+        font-family: Arial, sans-serif;
         text-align: center;
+        font-size: 15px;
       }
       .text-container {
         width: 30%;
@@ -29,8 +30,27 @@
         font-size: 40px;
       }
 
+      .score-text {
+        border: 0.25vmin solid white;
+        padding: 5px;
+        font-size: 30px;
+      }
+
       .text-description {
         text-align: justify;
+      }
+
+      @media screen and (max-width: 1100px) {
+        body {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+        }
+        .text-container {
+          width: 70%;
+          margin-bottom: 20px;
+        }
       }
 
       #game-board {
@@ -71,8 +91,18 @@
         the game increasingly difficult. The user controls the direction of the
         snake's head (up, down, left, or right), and the snake's body follows.
       </p>
-      <h3>Alter the snake speed here</h3>
-      <input type="range" min="1" max="10" id="speedRange" />
+      <p>(&#9888; This game is compatible only on desktop browsers)</p>
+      <h3>Click any arrow button on your keyboard to start</h3>
+      <div class="score-text">
+        <strong>
+          Your Score &#128526; :
+          <strong id="score"></strong>
+        </strong>
+      </div>
+      <div class="speed-container">
+        <h3>Alter the snake speed here</h3>
+        <input type="range" min="1" max="10" id="speedRange" />
+      </div>
     </div>
     <div id="game-board"></div>
   </body>

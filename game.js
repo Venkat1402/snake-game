@@ -16,7 +16,13 @@ const gameBoard = document.getElementById("game-board");
 
 function main(currentTime) {
   if (gameOver) {
-    if (confirm("You lost. Press Ok to restart")) {
+    if (
+      confirm(
+        `You lost .Your final score is ${
+          document.getElementById("score").innerHTML
+        }. Press OK to restart.`
+      )
+    ) {
       window.location = "/";
     }
     return;

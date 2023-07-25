@@ -1,7 +1,6 @@
 import { getInputDirection } from "./input.js";
 
 export let SNAKE_SPEED = 5;
-console.log("SNAKE_SPEED", SNAKE_SPEED);
 const snakeBody = [{ x: 11, y: 11 }];
 let newSegments = 0;
 
@@ -16,6 +15,8 @@ export function update() {
 
   snakeBody[0].x += inputDirection.x;
   snakeBody[0].y += inputDirection.y;
+
+  document.getElementById("score").innerHTML = snakeBody.length - 1;
 }
 
 export function draw(gameBoard) {
