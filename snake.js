@@ -1,10 +1,12 @@
 import { getInputDirection } from "./input.js";
 
-export const SNAKE_SPEED = 5;
+export let SNAKE_SPEED = 5;
+console.log("SNAKE_SPEED", SNAKE_SPEED);
 const snakeBody = [{ x: 11, y: 11 }];
 let newSegments = 0;
 
 export function update() {
+  SNAKE_SPEED = document.getElementById("speedRange").value;
   addSegments();
   const inputDirection = getInputDirection();
 
