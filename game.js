@@ -23,7 +23,7 @@ function main(currentTime) {
         }. Press OK to restart.`
       )
     ) {
-      window.location = "/";
+      window.location = "/snake-game/";
     }
     return;
   }
