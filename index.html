@@ -40,6 +40,13 @@
         text-align: justify;
       }
 
+      .direction-buttons {
+        display: none;
+      }
+      .mobile-text {
+        display: none;
+      }
+
       @media screen and (max-width: 1100px) {
         body {
           display: flex;
@@ -50,6 +57,19 @@
         .text-container {
           width: 70%;
           margin-bottom: 20px;
+        }
+        .direction-buttons {
+          padding: 40px;
+          display: block;
+        }
+        .mobile-text {
+          display: inline;
+        }
+        button {
+          width: 60px;
+          padding: 10px;
+          border-radius: 50%;
+          box-shadow: 2px 2px 10px grey;
         }
       }
 
@@ -91,8 +111,11 @@
         the game increasingly difficult. The user controls the direction of the
         snake's head (up, down, left, or right), and the snake's body follows.
       </p>
-      <p>(&#9888; This game is compatible only on desktop browsers)</p>
-      <h3>Click any arrow button on your keyboard to start</h3>
+
+      <h3 style="display: inline">
+        Click any arrow button on your keyboard to start
+      </h3>
+      <h3 class="mobile-text">or below given buttons for mobile screens</h3>
       <div class="score-text">
         <strong>
           Your Score &#128526; :
@@ -105,5 +128,13 @@
       </div>
     </div>
     <div id="game-board"></div>
+    <div class="direction-buttons">
+      <button id="arrowUp">&#8593;</button>
+      <div class="vertical-buttons">
+        <button style="margin-right: 30px" id="arrowLeft">&#8592;</button>
+        <button style="margin-left: 30px" id="arrowRight">&#8594;</button>
+      </div>
+      <button id="arrowDown">&#8595;</button>
+    </div>
   </body>
 </html>
